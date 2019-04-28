@@ -9,11 +9,12 @@ import './Card.css';
 // import { parentPort } from 'worker_threads'; -- what is this and where the heck did it come from????
 
 
-function Card(props) {
+export default function Card(props) {
     return (
         <div className="card">
             <button
             type='button'
+            onClick={() => props.onClickDelete(props.id)}
             >
             delete
             </button>
@@ -23,5 +24,7 @@ function Card(props) {
     )
 }
 
-
-export default Card;
+Card.propTypes = {
+    onClickDelete: () => {}
+}
+// what is the above doing??
